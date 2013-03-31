@@ -1,4 +1,5 @@
 <apex:component >
+<apex:attribute name="isHttps" description="This to indicate if using https to get the api" type="Boolean" required="true" default="true" />
 	<apex:attribute name="jsondata" description="This is the chart data" type="string" required="true" />
 	<apex:attribute name="axisColor" description="The color of the axis. Possible values are as those of the backgroundColor configuration option." type="string"/>
 	<apex:attribute name="axisBackgroundColor" description="The border around axis background. Possible values are as those of the backgroundColor configuration option." type="string"/>
@@ -20,17 +21,17 @@
 	<apex:attribute name="titleColor" description="The color for the chart's title. Possible values are as those of the backgroundColor configuration option." type="string"/>
 	<apex:attribute name="width" description="This is the chart width" type="string" default="500" />
 	<!-- Doc for this component is here: http://code.google.com/apis/visualization/documentation/gallery/motionchart.html -->
-	
+
 	<apex:outputPanel id="chart_div">
-		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript" src="{!IF( isHttps, 'https://www.google.com/jsapi', 'http://www.google.com/jsapi' )}" />
 		<script type="text/javascript">
  			google.load("visualization", "1", {packages: ["corechart"]});
-			google.setOnLoadCallback(drawChart); 
- 
+			google.setOnLoadCallback(drawChart);
+
 			function drawChart() {
   				var data = new google.visualization.DataTable( eval( '({!jsondata})' ) );
-  
-				var chart = new google.visualization.ScatterChart( 
+
+				var chart = new google.visualization.ScatterChart(
 		  		document.getElementById('{!$Component.chart_div}'));
   				chart.draw(data, {width: {!width}, height: {!height},
 			  					  axisColor: '{!axisColor}',

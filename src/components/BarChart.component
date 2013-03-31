@@ -1,4 +1,5 @@
 <apex:component >
+	<apex:attribute name="isHttps" description="This to indicate if using https to get the api" type="Boolean" required="true" default="true" />
 	<apex:attribute name="jsondata" description="This is the chart data" type="string" required="true" />
 	<apex:attribute name="title" description="This is the chart title" type="string" required="true" />
 	<apex:attribute name="height" description="This is the chart height" type="integer" default="250" />
@@ -8,35 +9,35 @@
 	<apex:attribute name="colors" description="This is the list of colors for the columns."	type="string[]"/>
 	<apex:attribute name="borderColor" description="This is the color of the border around chart elements." type="string" default="white" />
 	<apex:attribute name="focusBorderColor" description="This is the color of the border around chart elements that are in focus." type="string" default="gray" />
-	
+
+	<script type="text/javascript" src="{!IF( isHttps, 'https://www.google.com/jsapi', 'http://www.google.com/jsapi' )}" />
 	<apex:outputPanel id="chart_div">
-		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		<script type="text/javascript">
  google.load("visualization", "1", {packages: ["corechart" ]});
- google.setOnLoadCallback(drawLineChart); 
- 
+ google.setOnLoadCallback(drawLineChart);
+
  function drawLineChart() {
   var data = new google.visualization.DataTable( eval( '({!jsondata})' ) );
 
-  var chart = new google.visualization.BarChart( 
+  var chart = new google.visualization.BarChart(
   		document.getElementById('{!$Component.chart_div}'));
-  chart.draw(data, {width: {!width}, height: {!height}, 
+  chart.draw(data, {width: {!width}, height: {!height},
   		legend: '{!legend}',  // should be passed in via attribute
         smoothLine: true,  // should be passed in via attribute
-        title: '{!title}', 
+        title: '{!title}',
         is3D : {!is3D},
 	    //colors : [{!colors}],
         borderColor : '{!borderColor}',
         focusBorderColor : '{!focusBorderColor}'
         });
-   
+
    /*
    google.visualization.events.addListener(table, 'select', function() {
     var row = chart.getSelection()[0].row;
    	// alert('You selected ' + data.getValue(row, 0));
     window.location.href = '/'+data.getValue(row, 0);
    });*/
- 
+
  }
 </script>
 	</apex:outputPanel>
