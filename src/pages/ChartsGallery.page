@@ -23,13 +23,13 @@ Here are some examples :
 
 <div class="charts-container" >
 	<div class="dashboard-item">
-		<c:AreaChart jsondata="{!salesAndExpensesJSONData}" title="Sales and Expense" legend="right" width="375" height="250" />
+		<c:AreaChart jsondata="{!salesAndExpensesJSONData}" title="Company Performance" legend="right" width="375" height="250" />
 	</div>
 	<div class="dashboard-item">
-		<c:BarChart jsondata="{!salesAndExpensesJSONData}" title="Sales and Expense" legend="bottom" width="375" height="250" />
+		<c:BarChart jsondata="{!salesAndExpensesJSONData}" title="Company Performance" legend="bottom" width="375" height="250" />
 	</div>
 	<div class="dashboard-item">
-		<c:ColumnChart jsondata="{!salesAndExpensesJSONData}" title="Sales and Expense" legend="top" width="375" height="250" is3D="true"/>
+		<c:ColumnChart jsondata="{!salesAndExpensesJSONData}" title="Company Performance" legend="top" width="375" height="250" is3D="true"/>
 	</div>
 </div>
 
