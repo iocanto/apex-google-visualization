@@ -1,0 +1,36 @@
+<apex:page controller="ChartsGalleryCtrl" title="Google Charts Gallery" sidebar="false">
+
+<style type="text/css">
+	.dashboard-item {
+		display: inline-table;
+		border-color: grey;
+		border-style: solid;
+		border-width: 1px;
+		width: 350px;
+		height: 250px;
+		vertical-align: top;
+		margin: 8px;
+	}
+	.charts-container{
+		background-color: #f5f5f5;
+		padding: 8px;
+	}
+</style>
+
+<h1> Charts Gallery </h1><br/>
+
+Here are some examples :
+
+<div class="charts-container" >
+	<div class="dashboard-item">
+		<c:AreaChart jsondata="{!salesAndExpensesJSONData}" title="Sales and Expense" legend="right" width="375" height="250" />
+	</div>
+	<div class="dashboard-item">
+		<c:BarChart jsondata="{!salesAndExpensesJSONData}" title="Sales and Expense" legend="bottom" width="375" height="250" />
+	</div>
+	<div class="dashboard-item">
+		<c:ColumnChart jsondata="{!salesAndExpensesJSONData}" title="Sales and Expense" legend="top" width="375" height="250" is3D="true"/>
+	</div>
+</div>
+
+</apex:page>
