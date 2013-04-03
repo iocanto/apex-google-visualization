@@ -1,5 +1,5 @@
 <apex:component >
-	<apex:attribute name="isHttps" description="This to indicate if using https to get the api" type="Boolean" required="true" default="true" />
+	<apex:attribute name="isHttps" description="This to indicate if using https to get the api" type="Boolean"  default="true" />
 	<apex:attribute name="jsondata" description="This is the chart data, data format described here: http://code.google.com/apis/visualization/documentation/gallery/annotatedtimeline.html" type="string" required="true" />
 	<apex:attribute name="width" description="This is the width ex: 700px" type="string" default="700px" />
 	<apex:attribute name="height" description="This is the chart height" type="string" default="250px" />

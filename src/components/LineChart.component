@@ -1,5 +1,5 @@
 <apex:component >
-	<apex:attribute name="isHttps" description="This to indicate if using https to get the api" type="Boolean" required="true" default="true" />
+	<apex:attribute name="isHttps" description="This to indicate if using https to get the api" type="Boolean"  default="true" />
 	<apex:attribute name="jsondata" description="This is the chart data" type="string" required="true" />
 	<apex:attribute name="axisColor" description="The color of the axis. Possible values are as those of the backgroundColor configuration option." type="string"/>
 	<apex:attribute name="axisBackgroundColor" description="The border around axis background. Possible values are as those of the backgroundColor configuration option." type="string"/>

@@ -1,11 +1,13 @@
 <apex:component >
-	<apex:attribute name="isHttps" description="This to indicate if using https to get the api" type="Boolean" required="true" default="true" />
+	<apex:attribute name="isHttps" description="This to indicate if using https to get the api" type="Boolean"  default="true" />
 	<apex:attribute name="jsondata" description="This is the chart data" type="string" required="true" />
 	<apex:attribute name="title" description="This is the chart title" type="string" required="true" />
 	<apex:attribute name="height" description="This is the chart height" type="integer" default="250" />
 	<apex:attribute name="width" description="This is the chart width" type="integer" default="500" />
 	<apex:attribute name="is3D" description="This deteremines whether or not the chart is 3D."	type="boolean" default="false"/>
-	<apex:attribute name="legend" description="This is the legend location" type="string" default="right" />
+	<apex:attribute name="legend" description="This is the legend location. It can be one
+											   of the following: right, left, top, bottom, none"
+		type="string" default="right" />
 	<apex:attribute name="colors" description="This is the list of colors for the columns."	type="string[]"/>
 	<apex:attribute name="borderColor" description="This is the color of the border around chart elements." type="string" default="white" />
 	<apex:attribute name="focusBorderColor" description="This is the color of the border around chart elements that are in focus." type="string" default="gray" />
@@ -21,7 +23,7 @@
 
   var chart = new google.visualization.BarChart(
   		document.getElementById('{!$Component.chart_div}'));
-  chart.draw(data, {width: {!width}, height: {!height},
+  		chart.draw(data, {width: {!width}, height: {!height},
   		legend: '{!legend}',  // should be passed in via attribute
         smoothLine: true,  // should be passed in via attribute
         title: '{!title}',
