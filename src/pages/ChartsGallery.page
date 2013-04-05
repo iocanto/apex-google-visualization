@@ -31,6 +31,12 @@ Here are some examples :
 	<div class="dashboard-item">
 		<c:ColumnChart jsondata="{!salesAndExpensesJSONData}" title="Company Performance" legend="top" width="375" height="250" is3D="true"/>
 	</div>
+	<div class="dashboard-item">
+		<c:LineChart jsondata="{!salesAndExpensesJSONData}" title="Company Performance" legend="top" width="375" height="250" />
+	</div>
+	<div class="dashboard-item">
+		<c:GeoChart jsondata="{!PopularityByContryJSONData}"  width="375" height="250" />
+	</div>
 </div>
 
 </apex:page>

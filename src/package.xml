@@ -13,6 +13,7 @@
         <members>BarChart</members>
         <members>ColumnChart</members>
         <members>DataTable</members>
+        <members>GeoChart</members>
         <members>HierarchicalChart</members>
         <members>LineChart</members>
         <members>MotionChart</members>
