@@ -1,5 +1,5 @@
 <apex:component >
-	<apex:attribute name="isHttps" description="This to indicate if using https to get the api" type="Boolean"  default="true" />
+	<apex:attribute name="isHttps" description="This indicates if using https to get the api" type="Boolean"  default="true" />
 	<apex:attribute name="jsondata" description="This is the chart data" type="string" required="true" />
 	<apex:attribute name="axisColor" description="The color of the axis. Possible values are as those of the backgroundColor configuration option." type="string"/>
 	<apex:attribute name="axisBackgroundColor" description="The border around axis background. Possible values are as those of the backgroundColor configuration option." type="string"/>
@@ -24,10 +24,10 @@
 	<apex:attribute name="width" description="This is the chart width" type="string" default="500" />
 	<!-- Doc for this component is here: http://code.google.com/apis/visualization/documentation/gallery/motionchart.html -->
 
-	<script type="text/javascript" src="{!IF( isHttps, 'https://www.google.com/jsapi', 'http://www.google.com/jsapi' )}" />
 
 	<apex:outputPanel id="chart_div">
 
+		<script type="text/javascript" src="{!IF( isHttps, 'https://www.google.com/jsapi', 'http://www.google.com/jsapi' )}" />
 		<script type="text/javascript">
  			google.load("visualization", "1", {packages: ["corechart"]});
 			google.setOnLoadCallback(drawAreaChart);

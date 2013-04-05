@@ -1,7 +1,7 @@
 <apex:component >
 	<!-- This component is uses Google's "Organizational Chart" Visualization: http://code.google.com/apis/visualization/documentation/gallery/orgchart.html -->
 
-	<apex:attribute name="isHttps" description="This to indicate if using https to get the api" type="Boolean"  default="true" />
+	<apex:attribute name="isHttps" description="This indicates if using https to get the api" type="Boolean"  default="true" />
 	<apex:attribute name="jsondata" description="This is the chart data" type="string" required="true" />
 	<!-- The initialSelection attribute must be an array of JSON objects that contain a row property. They should take this form: '[{row:0}]', and must be eval'd.
 	     More information can be found here: http://code.google.com/apis/visualization/documentation/events.html -->

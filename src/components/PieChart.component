@@ -1,5 +1,5 @@
 <apex:component >
-	<apex:attribute name="isHttps" description="This to indicate if using https to get the api" type="Boolean"  default="true" />
+	<apex:attribute name="isHttps" description="This indicates if using https to get the api" type="Boolean"  default="true" />
 	<apex:attribute name="jsondata" description="This is the chart data"
 		type="string" required="true" />
 
